@@ -196,7 +196,7 @@ legend.onAdd = function() {
     "#ea2c2c"
   ];
 
-// Looping through our intervals to generate a label with a colored square for each interval.
+// Looping through our intervals to generate a label with a colored square/LEGEND for each interval.
   for (var i = 0; i < magnitudes.length; i++) {
     console.log(colors[i]);
     div.innerHTML +=
@@ -206,9 +206,8 @@ legend.onAdd = function() {
     return div;
   };
 
-  // Finally, we our legend to the map.
+  // Add legend to the map.
   legend.addTo(map);
-
 
   // Use d3.json to make a call to get our Tectonic Plate geoJSON data.
   d3.json("https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json").then(function(data) {
@@ -221,6 +220,4 @@ legend.onAdd = function() {
   });
   // add the tectonic layer group variable to the map
   tectonicPlates.addTo(map)
-
-
 });
